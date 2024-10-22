@@ -8,12 +8,10 @@ import { instance } from '@/api/hook'
 import { handleLogout } from '@/constant'
 
 const Authentication = () => {
-    // hook
     const router = useRouter();
     const [isHandling403, setIsHandling403] = useState<boolean>(false);
     const [apis, setApis] = useState<number>(0);
 
-    // lifecycle
     useEffect(() => {
         instance.interceptors.request.use(
             function (config) {
