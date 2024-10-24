@@ -1,11 +1,14 @@
 "use client";
 import React from 'react';
-
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 const Home = () => {
   return (
     <div style={{ padding: '20px' }}>
-    <h1>Welcome to My Home Page</h1>
-  </div>
+      <Button variant="outline">Button</Button>
+      <Input />
+      <h1>Welcome to My Home Page</h1>
+    </div>
   );
 };
 
