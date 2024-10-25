@@ -7,7 +7,7 @@ const Home = () => {
     <div style={{ padding: '20px' }}>
       <Button variant="outline">Button</Button>
       <Input />
-      <h1>Welcome to My Home Page</h1>
+      <h1 className='roboto-thin'>Welcome to My Home Page</h1>
     </div>
   );
 };
