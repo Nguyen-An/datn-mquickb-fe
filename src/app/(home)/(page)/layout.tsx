@@ -1,3 +1,4 @@
+import PageLayout from "@/components/layout/pageLayout";
 
 const PrimaryLayout = ({
     children,
@@ -7,9 +8,9 @@ const PrimaryLayout = ({
     return (
         <>
         {/* <CollapseProvider> */}
-            {/* <PageLayout> */}
+            <PageLayout>
                     {children}
-            {/* </PageLayout> */}
+            </PageLayout>
         {/* </CollapseProvider> */}
         </>
     );

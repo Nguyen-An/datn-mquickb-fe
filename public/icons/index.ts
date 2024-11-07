@@ -4,6 +4,7 @@ import iconChefAvatarIMG from './chef-avatar.png'
 import iconKitchenToolIMG from './kitchen-tools.png'
 import iconQRCodeIMG from './qrcode.png'
 import iconlogoIMG from './logo-round.png'
+import iconArrowRightIMG from './arrow-right.svg'
 
 export default {
     iconBrownWatch: iconBrownWatchIMG.src,
@@ -12,4 +13,5 @@ export default {
     iconKitchenTool: iconKitchenToolIMG.src,
     iconQRCode: iconQRCodeIMG.src,
     iconlogo: iconlogoIMG.src,
+    iconArrowRight: iconArrowRightIMG.src,
 }

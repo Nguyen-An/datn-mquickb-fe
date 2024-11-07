@@ -2,22 +2,33 @@
 import React from 'react';
 import icon from '@/../public/icons/index';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation'
 
 const Home = () => {
-
+  const router = useRouter()
   const srcIconBrownWatch = icon['iconBrownWatch']
   const srcIconCake = icon['iconCake']
   const srcIconChefAvatar = icon['iconChefAvatar']
   const srcIconKitchenTool = icon['iconKitchenTool']
   const srcIconQRCode = icon['iconQRCode']
   const srcIconlogo = icon['iconlogo']
+  const srcIconArrowRight = icon['iconArrowRight']
+
+  const handleClick = () => {
+    router.push('/chat')
+  }
 
   return (
     <>
       <div className='bg-landing-page h-[90vh] bg-cover bg-center bg-no-repeat relative'>
-        <div className='w-full flex justify-center absolute top-[0]'>
-          <div className='w-[90vw] bg-[#fff]'>
-            <Image src={srcIconlogo} alt="" className='mt-2 rounded-[10px]' width={150} height={150} />
+        <div className='w-full flex justify-center absolute top-[0] mt-8'>
+          <div className='w-[90vw] h-[90px] bg-[#fffbfb] rounded-[50px] py-[10px] px-8 flex justify-between'>
+            <Image src={srcIconlogo} alt="" className='rounded-[10px]' width={70} height={70} />
+            <div className='h-full flex items-center'>
+              <div className='flex bg-[#f1553a] py-3 px-8 rounded-[50px] text-[#fff] text-[20px] pacifico-regular cursor-pointer' onClick={() => {handleClick()}}>
+                Bắt đầu <Image src={srcIconArrowRight} alt="" className='ml-2' width={20} height={20} />
+              </div>
+            </div>
           </div>
         </div>
         <div className='w-full text-center absolute bottom-[190px] z-1'>
