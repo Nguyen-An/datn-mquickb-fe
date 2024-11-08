@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-// import "./sidebar.scss";
+import "./sidebar.scss";
 import { usePathname, useRouter } from "next/navigation";
 import SideBarItem from "./sideBarItem";
 
