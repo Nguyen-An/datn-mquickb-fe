@@ -1,3 +1,31 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "jsx": true
+  },
+  "rules": {
+    // Chỉnh cảnh báo cho các quy tắc ESLint
+    "no-console": "warn", // Cảnh báo khi sử dụng console.log
+    "react/prop-types": "off", // Tắt cảnh báo về prop-types trong React
+    "no-unused-vars": "warn", // Cảnh báo khi có biến chưa sử dụng
+    "no-debugger": "error", // Chuyển thành lỗi khi có debugger
+    "semi": ["warn", "always"], // Cảnh báo nếu thiếu dấu chấm phẩy
+    "quotes": ["warn", "single"], // Lỗi nếu không dùng dấu nháy đơn
+    "eqeqeq": ["error", "always"], // Lỗi nếu dùng == thay vì ===
+    "no-magic-numbers": ["warn", { "ignore": [0, 1] }], // Cảnh báo khi sử dụng số ma thuật (trừ 0 và 1)
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
 }
+
+

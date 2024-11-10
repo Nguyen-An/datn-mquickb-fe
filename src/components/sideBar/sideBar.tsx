@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import "./sidebar.scss";
+import  './sidebar.scss';
 import { usePathname, useRouter } from "next/navigation";
 import SideBarItem from "./sideBarItem";
+import { FileAddOutlined, FormOutlined, HomeOutlined, MenuOutlined, TableOutlined, UserOutlined, WechatWorkOutlined } from "@ant-design/icons";
 
 interface MenuItem {
-  icon: string;
+  icon: any;
   title: string;
   active: boolean;
   key: string;
@@ -31,48 +32,48 @@ const SideBar = () => {
   const [menu, setMenu] = useState<MenuItem[]>(
     [
       {
-        icon: "icon-home",
-        title: 'home',
+        icon: <HomeOutlined style={{fontSize: "22px", color: "#fff"}}/>,
+        title: 'Doanh thu',
         active: false,
         key: "dashboard",
         // permissions: [PERMISSIONS.SYSTEM_ADMIN, PERMISSIONS.COMPANY_ADMIN]
       },
       {
-        icon: "icon-user",
-        title: 'user',
+        icon: <UserOutlined style={{fontSize: "22px", color: "#fff"}}/>,
+        title: 'Quản lý nhân viên',
         active: false,
         key: "user",
         // permissions: [PERMISSIONS.SYSTEM_ADMIN, PERMISSIONS.COMPANY_ADMIN]
       },
       {
-        icon: "icon-doc",
-        title: 'document_management',
+        icon: <FileAddOutlined style={{fontSize: "22px", color: "#fff"}}/>,
+        title: 'Quản lý tài liệu',
         active: false,
         key: "document",
         // permissions: [PERMISSIONS.SYSTEM_ADMIN, PERMISSIONS.COMPANY_ADMIN]
       },
       {
-        icon: "icon-company",
-        title:'order_management',
-        active: false,
-        key: "order",
-        // permissions: [PERMISSIONS.SYSTEM_ADMIN]
-      },
-      {
-        icon: "icon-assistant-menu",
-        title: "menu_management",
-        active: false,
-        key: "menu",
-      },
-      {
-        icon: "icon-model",
-        title: "table_management",
+        icon: <TableOutlined style={{fontSize: "22px", color: "#fff"}}/>,
+        title:'Quản lý bàn ăn',
         active: false,
         key: "table",
         // permissions: [PERMISSIONS.SYSTEM_ADMIN]
       },
       {
-        icon: "icon-chat",
+        icon: <MenuOutlined style={{fontSize: "22px", color: "#fff"}}/>,
+        title: "Quản lý menu",
+        active: false,
+        key: "menu",
+      },
+      {
+        icon: <FormOutlined style={{fontSize: "22px", color: "#fff"}}/>,
+        title: "Quản lý đơn hàng",
+        active: false,
+        key: "order",
+        // permissions: [PERMISSIONS.SYSTEM_ADMIN]
+      },
+      {
+        icon: <WechatWorkOutlined style={{fontSize: "22px", color: "#fff"}}/>,
         title: "chat_gpt",
         active: false,
         key: "chat",
@@ -110,7 +111,7 @@ const SideBar = () => {
 
   return (
     <>
-      <div className="sideBar px-[6px] pb-6 pt-[6px] m-0 flex justify-between flex-col fixed w-[100px] h-screen top-0 left-0 bg-blue-primary">
+      <div className={`sideBar px-[6px] pb-6 pt-[6px] m-0 flex justify-between flex-col fixed w-[100px] h-screen top-0 left-0 bg-blue-primary`}>
         <ul>
           {menu.map((item, index) => (
           //   (!item.permissions || item.permissions.includes(userInfo?.role_id)) && !loading ?

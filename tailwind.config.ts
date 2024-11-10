@@ -49,7 +49,30 @@ const config: Config = {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
-				}
+				},
+				blue: {
+					primary: "#4169E1",
+					primaryActive: "#3454B4",
+					buttonPrimary: "#4CA2FA",
+					backgroundHover: "rgba(150, 206, 251, 0.2)",
+				  },
+				  gray: {
+					backgroundButton: "#CFCFCF",
+					backgroundMenuChat: "#f5f5f5",
+					backgroundBlur: "#EEF0FE",
+					backgroundHover: "rgba(0, 0, 0, 0.06)",
+					borderColor: "#D0D0D0"
+				  },
+				  text: {
+					primary: "#292828",
+					titleInput: "#666666",
+					placeholderInput: "#C6C6C6",
+					title: "#1A1D1F",
+					textHeader: "rgba(102, 102, 102, 0.8)"
+				  },
+				  red: {
+					primary: '#E52323',
+				  },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

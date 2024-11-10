@@ -1,9 +1,9 @@
-const MenuPage = () => {
+import MenuPage from "@/components/menu/menuPage";
+
+const MenuPageL = () => {
     return (
-        <>
-        MenuPage
-        </>
+        <MenuPage></MenuPage>
     )
 };
 
-export default MenuPage;
+export default MenuPageL;
