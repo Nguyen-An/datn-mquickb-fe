@@ -1,9 +1,11 @@
-const TablePage = () => {
+import TablePage from "@/components/table/tablePage";
+
+const TablePageL = () => {
     return (
         <>
-        TablePage
+            <TablePage></TablePage>
         </>
     )
 };
 
-export default TablePage;
+export default TablePageL;

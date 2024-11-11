@@ -1,19 +1,20 @@
 "use client";
-import { Input, Tooltip } from 'antd';
+import { Input, QRCode, Tooltip } from 'antd';
 import Image from 'next/image';
 import React from 'react';
 import "@/style/page.scss"
 import icon from '@/../public/icons/index';
 
-const MenuPage = () => {
+const TablePage = () => {
     const srcIconDelete = icon['iconDelete']
     const srcIconEdit = icon['iconEdit']
     const srcIconView = icon['iconView']
+    const [text, setText] = React.useState('https://ant.design/');
 
     return (
         <>
             <div className='px-8 py-6'>
-                <div className='text-[28px] text-blue-primary font-semibold'>Quản lý món ăn</div>
+                <div className='text-[28px] text-blue-primary font-semibold'>Quản lý bàn ăn</div>
                 <div className='app-screen'>
                     <div className='flex justify-between h-10 my-3'>
                         <div><Input placeholder="Basic usage" /></div>
@@ -24,11 +25,11 @@ const MenuPage = () => {
                             <thead>
                                 <tr>
                                     <th><span>No.</span></th>
-                                    <th className="scroll-header" style={{ minWidth: "200px" }}>Tên món ăn</th>
-                                    <th className="scroll-header" style={{ minWidth: "200px" }}>Miêu tả</th>
-                                    <th className="scroll-header" style={{ width: "120px" }}>Ảnh</th>
-                                    <th className="scroll-header" style={{ minWidth: "200px" }}>Loại món</th>
+                                    <th className="scroll-header" style={{ minWidth: "200px" }}>Tên bàn ăn</th>
+                                    <th className="scroll-header" style={{ minWidth: "200px" }}>Link QR code</th>
+                                    <th className="scroll-header" style={{ width: "120px" }}>Mã QR code</th>
                                     <th className="scroll-header" style={{ minWidth: "200px" }}>Trạng thái</th>
+                                    <th className="scroll-header" style={{ minWidth: "200px" }}>Cập nhật lúc</th>
                                     <th style={{ width: "170px" }}><span className="text-left">Hành động</span></th>
                                 </tr>
                             </thead>
@@ -36,11 +37,11 @@ const MenuPage = () => {
                                 <tr>
                                     {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
                                     <td><div className="text-center">1</div></td>
-                                    <td><div className="text-center">Bánh rán</div></td>
-                                    <td><div className="text-center">Món ăn số 1 Việt Nam</div></td>
-                                    <td><div className="text-center"><Image src="https://mquickb.s3.amazonaws.com/d4d7a80b-4c5f-41ae-a36a-71af571e88ea.jpg" alt="" width={120} height={120} /></div></td>
-                                    <td><div className="text-center">Món tráng miệng</div></td>
-                                    <td><div className="text-center">Hiển thị</div></td>
+                                    <td><div className="text-center">Bàn số 1</div></td>
+                                    <td><div className="text-center">{ text }</div></td>
+                                    <td><div className="text-center"> <QRCode size={120} value={text || '-'} /></div></td>
+                                    <td><div className="text-center">Trống</div></td>
+                                    <td><div className="text-center">22/1/2024</div></td>
                                     <td className="bg-no-scroll" style={{ width: "170px" }}>
                                         <div className="flex justify-between">
                                             <Tooltip title={"detail"}>
@@ -58,55 +59,11 @@ const MenuPage = () => {
                                 <tr>
                                     {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
                                     <td><div className="text-center">1</div></td>
-                                    <td><div className="text-center">Bánh rán</div></td>
-                                    <td><div className="text-center">Món ăn số 1 Việt Nam</div></td>
-                                    <td><div className="text-center"><Image src="https://mquickb.s3.amazonaws.com/d4d7a80b-4c5f-41ae-a36a-71af571e88ea.jpg" alt="" width={120} height={120} /></div></td>
-                                    <td><div className="text-center">Món tráng miệng</div></td>
-                                    <td><div className="text-center">Hiển thị</div></td>
-                                    <td className="bg-no-scroll" style={{ width: "150px" }}>
-                                        <div className="flex justify-between">
-                                            <Tooltip title={"detail"}>
-                                                <button><Image src={srcIconView} alt="" className='mt-5' width={40} height={40} /></button>
-                                            </Tooltip>
-                                            <Tooltip title={"edit"}>
-                                                <button><Image src={srcIconEdit} alt="" className='mt-5' width={40} height={40} /></button>
-                                            </Tooltip>
-                                            <Tooltip title={"delete"}>
-                                                <button><Image src={srcIconDelete} alt="" className='mt-5' width={40} height={40} /></button>
-                                            </Tooltip>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
-                                    <td><div className="text-center">1</div></td>
-                                    <td><div className="text-center">Bánh rán</div></td>
-                                    <td><div className="text-center">Món ăn số 1 Việt Nam</div></td>
-                                    <td><div className="text-center"><Image src="https://mquickb.s3.amazonaws.com/d4d7a80b-4c5f-41ae-a36a-71af571e88ea.jpg" alt="" width={120} height={120} /></div></td>
-                                    <td><div className="text-center">Món tráng miệng</div></td>
-                                    <td><div className="text-center">Hiển thị</div></td>
-                                    <td className="bg-no-scroll" style={{ width: "150px" }}>
-                                        <div className="flex justify-between">
-                                            <Tooltip title={"detail"}>
-                                                <button><Image src={srcIconView} alt="" className='mt-5' width={40} height={40} /></button>
-                                            </Tooltip>
-                                            <Tooltip title={"edit"}>
-                                                <button><Image src={srcIconEdit} alt="" className='mt-5' width={40} height={40} /></button>
-                                            </Tooltip>
-                                            <Tooltip title={"delete"}>
-                                                <button><Image src={srcIconDelete} alt="" className='mt-5' width={40} height={40} /></button>
-                                            </Tooltip>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
-                                    <td><div className="text-center">1</div></td>
-                                    <td><div className="text-center">Bánh rán</div></td>
-                                    <td><div className="text-center">Món ăn số 1 Việt Nam</div></td>
-                                    <td><div className="text-center"><Image src="https://mquickb.s3.amazonaws.com/d4d7a80b-4c5f-41ae-a36a-71af571e88ea.jpg" alt="" width={120} height={120} /></div></td>
-                                    <td><div className="text-center">Món tráng miệng</div></td>
-                                    <td><div className="text-center">Hiển thị</div></td>
+                                    <td><div className="text-center">Bàn số 1</div></td>
+                                    <td><div className="text-center">{ text }</div></td>
+                                    <td><div className="text-center"> <QRCode size={120} value={text || '-'} /></div></td>
+                                    <td><div className="text-center">Trống</div></td>
+                                    <td><div className="text-center">22/1/2024</div></td>
                                     <td className="bg-no-scroll" style={{ width: "170px" }}>
                                         <div className="flex justify-between">
                                             <Tooltip title={"detail"}>
@@ -124,11 +81,55 @@ const MenuPage = () => {
                                 <tr>
                                     {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
                                     <td><div className="text-center">1</div></td>
-                                    <td><div className="text-center">Bánh rán</div></td>
-                                    <td><div className="text-center">Món ăn số 1 Việt Nam</div></td>
-                                    <td><div className="text-center"><Image src="https://mquickb.s3.amazonaws.com/d4d7a80b-4c5f-41ae-a36a-71af571e88ea.jpg" alt="" width={120} height={120} /></div></td>
-                                    <td><div className="text-center">Món tráng miệng</div></td>
-                                    <td><div className="text-center">Hiển thị</div></td>
+                                    <td><div className="text-center">Bàn số 1</div></td>
+                                    <td><div className="text-center">{ text }</div></td>
+                                    <td><div className="text-center"> <QRCode size={120} value={text || '-'} /></div></td>
+                                    <td><div className="text-center">Trống</div></td>
+                                    <td><div className="text-center">22/1/2024</div></td>
+                                    <td className="bg-no-scroll" style={{ width: "170px" }}>
+                                        <div className="flex justify-between">
+                                            <Tooltip title={"detail"}>
+                                                <button><Image src={srcIconView} alt="" className='mt-5' width={40} height={40} /></button>
+                                            </Tooltip>
+                                            <Tooltip title={"edit"}>
+                                                <button><Image src={srcIconEdit} alt="" className='mt-5' width={40} height={40} /></button>
+                                            </Tooltip>
+                                            <Tooltip title={"delete"}>
+                                                <button><Image src={srcIconDelete} alt="" className='mt-5' width={40} height={40} /></button>
+                                            </Tooltip>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
+                                    <td><div className="text-center">1</div></td>
+                                    <td><div className="text-center">Bàn số 1</div></td>
+                                    <td><div className="text-center">{ text }</div></td>
+                                    <td><div className="text-center"> <QRCode size={120} value={text || '-'} /></div></td>
+                                    <td><div className="text-center">Trống</div></td>
+                                    <td><div className="text-center">22/1/2024</div></td>
+                                    <td className="bg-no-scroll" style={{ width: "170px" }}>
+                                        <div className="flex justify-between">
+                                            <Tooltip title={"detail"}>
+                                                <button><Image src={srcIconView} alt="" className='mt-5' width={40} height={40} /></button>
+                                            </Tooltip>
+                                            <Tooltip title={"edit"}>
+                                                <button><Image src={srcIconEdit} alt="" className='mt-5' width={40} height={40} /></button>
+                                            </Tooltip>
+                                            <Tooltip title={"delete"}>
+                                                <button><Image src={srcIconDelete} alt="" className='mt-5' width={40} height={40} /></button>
+                                            </Tooltip>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* <td className="bg-no-scroll" style={{ minWidth: '60px' }}>{(index + 1) + (currentPage - 1) * pageSize}</td> */}
+                                    <td><div className="text-center">1</div></td>
+                                    <td><div className="text-center">Bàn số 1</div></td>
+                                    <td><div className="text-center">{ text }</div></td>
+                                    <td><div className="text-center"> <QRCode size={120} value={text || '-'} /></div></td>
+                                    <td><div className="text-center">Trống</div></td>
+                                    <td><div className="text-center">22/1/2024</div></td>
                                     <td className="bg-no-scroll" style={{ width: "170px" }}>
                                         <div className="flex justify-between">
                                             <Tooltip title={"detail"}>
@@ -154,4 +155,4 @@ const MenuPage = () => {
     );
 };
 
-export default MenuPage;
+export default TablePage;

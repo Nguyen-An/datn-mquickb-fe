@@ -1,9 +1,11 @@
-const FilePage = () => {
+import FilePage from "@/components/file/filePage";
+
+const FilePageL = () => {
     return (
         <>
-        FilePage
+        <FilePage></FilePage>
         </>
     )
 };
 
-export default FilePage;
+export default FilePageL;
