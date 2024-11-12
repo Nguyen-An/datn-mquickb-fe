@@ -1,9 +1,11 @@
-const OrderPage = () => {
+import OrderPage from "@/components/order/orderPage";
+
+const OrderPageL = () => {
     return (
         <>
-        OrderPage
+            <OrderPage></OrderPage>
         </>
     )
 };
 
-export default OrderPage;
+export default OrderPageL;
