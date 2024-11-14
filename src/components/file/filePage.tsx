@@ -12,10 +12,10 @@ const FilePage = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [totalPage, setTotalPage] = useState(100)
     
-    const onPageChange = async (page: number) => {
-        // await getList(page, keyword, categorySelect);
-        setCurrentPage(page);
-      }
+    // const onPageChange = async (page: number) => {
+    //     // await getList(page, keyword, categorySelect);
+    //     setCurrentPage(page);
+    //   }
     return (
         <>
             <div className='px-8 py-6'>
@@ -148,7 +148,7 @@ const FilePage = () => {
 
                     </div>
                     <div className="mt-5 flex justify-center">
-                            <Pagination showSizeChanger={false} current={currentPage} pageSize={10} total={totalPage} onChange={onPageChange} />
+                            {/* <Pagination showSizeChanger={false} current={currentPage} pageSize={10} total={totalPage} onChange={onPageChange} /> */}
                         </div>
                 </div>
             </div>

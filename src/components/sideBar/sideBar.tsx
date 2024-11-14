@@ -22,13 +22,6 @@ const SideBar = () => {
 
   const [userInfo, setUserInfo] = useState<any>();
 
-  useEffect(() => {
-    // const token = localStorage?.getItem("token");
-    // const user = token ? jwtDecode(token) : null;
-    // setUserInfo(user);
-    // setLoading(false);
-  }, []);
-
   const [menu, setMenu] = useState<MenuItem[]>(
     [
       {
